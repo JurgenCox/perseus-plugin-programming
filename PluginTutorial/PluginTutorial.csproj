@@ -82,16 +82,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UmapAnalysis_with_r.cs" />
+    <Compile Include="UmapAnalysis_with_py.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Resources\head_c_sharpR.R" />
+    <None Include="Resources\Umap_R.R" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="conf\crosslinks.xml" />
     <Content Include="conf\databases.xml" />
     <Content Include="conf\enzymes.xml" />
     <Content Include="conf\modifications.xml" />
+    <None Include="Resources\Umap_Py.py" />
     <None Include="Resources\head_c_sharpPy.py" />
   </ItemGroup>
   <ItemGroup>

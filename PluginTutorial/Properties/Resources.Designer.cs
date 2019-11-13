@@ -79,5 +79,25 @@ namespace PluginTutorial.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Umap_Py {
+            get {
+                object obj = ResourceManager.GetObject("Umap_Py", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Umap_R {
+            get {
+                object obj = ResourceManager.GetObject("Umap_R", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

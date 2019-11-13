@@ -124,4 +124,10 @@
   <data name="head_c_sharpR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\head_c_sharpR.R;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Umap_Py" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Umap_Py.py;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Umap_R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Umap_R.R;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
