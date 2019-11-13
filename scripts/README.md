@@ -18,7 +18,7 @@ interop package for each language.
 
 First follow the [`Plugin Interop` installation instructions](https://github.com/jdrudolph/PluginInterop/)
 and add `PluginInterop.dll` to your Perseus installation. The next steps
-depend on the scriting language you intend to use.
+depend on the scrpiting language you intend to use.
 
 ### Python
 
@@ -46,3 +46,6 @@ folder and the package websites.
 2. Open Perseus and create a random data matrix. In the `External` menu you
 will find processing activities for both `R` and `Python`.
 
+3. If the scripts containing arguments which need to be assigned, You can specifiy them in `Additional arguments`.
+For example, using `head_add_argument.py`, the number of rows can be specified by `--nrow=15` in `Additional arguments`.
+Using `head_add_argument.py`, the number of rows can be directly assigned by `15` in `Additional arguments`.

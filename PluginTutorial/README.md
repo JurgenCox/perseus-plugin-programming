@@ -6,7 +6,7 @@ We will develop our own simple plugin by modifying the most simple existing plug
 In the end the plugin will allow you to extract a number of rows from the top of the matrix as specified
 by a parameter.
 
-Reading existing code and modifying it is the fastes way to learning plugin development.
+Reading existing code and modifying it is the fastest way to learning plugin development.
 This way we can not only understand how things work but also easily reuse existing functionality for our needs.
 
 ## Requirements
@@ -37,11 +37,11 @@ dependency `BaseLibS` will now be added to your project.
 
 5. There are only a few things left to do before we can try our new plugin.
 Correct the namespace to `namespace PluginTutorial` and the class to `class
-HeadProcessing`.  Set the `DisplayImage => null` and adjust all other strings
+PluginHead`.  Set the `DisplayImage => null` and adjust all other strings
 in the class.  Now you can build the solution. Use the Windows File Explorer to
 navigate to the `PluginTutorial/bin/Debug` folder and copy the
 `PluginTutorial.dll` to the Perseus folder.  Start Perseus, generate some
-random data and try your plugin [commit `96ce38c2`].
+random data and try your plugin.
 
 6. Now we need to implement the actual functionality in the [`ProcessData(..)`]
 method. We can look for inspiration in the [filter random
@@ -53,11 +53,11 @@ which is turn uses
 We can utilize the same function to implement our plugin!
 
 	```csharp
-	var numberOfRows = 10;
-	var indices = Enumerable.Range(0, numberOfRows).ToArray();
-	mdata.ExtractRows(indices);
+        int lines = 10;
+	int[] remains = Enumerable.Range(0, lines).ToArray();
+	mdata.ExtractRows(remains);
 	```
-	Make sure to build your solution and try out your now functional plugin! [commit `3e3b020b`]
+	Make sure to build your solution and try out your new functional plugin!
 
 7. Manually copying the DLL after each build is very annoying and reduces productivity. We can
 use Visual Studio to automatically copy the DLL after each build and launch Perseus in debug
@@ -79,14 +79,14 @@ In its `GetParameters(...)` function it's initializing a [`IntParam`](https://gi
 To obtain its value it is extracting the parameter in the [`ProcessData`](https://github.com/JurgenCox/perseus-plugins/blob/master/PerseusPluginLib/Filter/FilterRandomRows.cs#L39) function.
 We can again utilize this in our plugin by creating our parameter in our `GetParameters` function:
 	```csharp
-	return new Parameters(new IntParam("Number of rows", 10));
+	return new Parameters(new IntParam("Number of rows", 15));
 	```
 	And using it in the `ProcessData` function:
 
 	```csharp
-	var numberOfRows = param.GetParam<int>("Number of rows").Value;
-	var indices = Enumerable.Range(0, numberOfRows).ToArray();
-	mdata.ExtractRows(indices);
+	int lines = param.GetParam<int>("Number of rows").Value;
+	int[] remains = Enumerable.Range(0, lines).ToArray();
+	mdata.ExtractRows(remains);
 	```
 	Build your solution another time and check to see that the parameters are handled correctly!
 

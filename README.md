@@ -1,10 +1,10 @@
 ﻿# Plugin Tutorial
 
-MQ Summer School tutorial for Perseus plugin development.
+The scripts for Perseus plugin protocol.
 The plugin development tutorial consists of two parts. Make sure
 to have all the requirements installed.
 
-## MaxQuant summer school plugin programming bootcamp
+## Tutorial video from MaxQuant summer school plugin programming bootcamp
 
 [![YouTube](http://img.youtube.com/vi/-3oq9e_92lc/0.jpg)](http://www.youtube.com/watch?v=-3oq9e_92lc)
 
