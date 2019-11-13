@@ -189,13 +189,13 @@ All the necessary information and commands are all included in these scripts. Yo
     mdata <- read.perseus(inFile) # read the input matrix into a pandas.DataFrame
     counts <- main(mdata) # get the main matrix of Perseus
     mdata2 <- head(counts, n=num_row) # main part for the data modification. You can add your own script from here. 
-    aCols <- head(annotCols(mdata), n=num_row) # get the annotation columns of main matrix and reduce to the amount to the assigned number of rows
+    aCols <- head(annotCols(mdata), n=num_row) # get the annotation columns of main matrix and reduce the amount to the assigned number of rows
     mdata2 <- matrixData(main=mdata2, annotCols=aCols, annotRows=annotRows(mdata)) # update the matrix
     print(paste('writing to', outFile)) # print to output file
     write.perseus(mdata2, outFile) # Write the results to the expected locations in the Perseus formats.
 	```
-9. Build your solution another time and check to see that the parameters are handled correctly!
-	
+9. Build your solution and check to see that the parameters are handled correctly!
+
 ## Next steps
 
 ### Error handling
