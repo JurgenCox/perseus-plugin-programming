@@ -14,7 +14,7 @@ This way we can not only understand how things work but also easily reuse existi
 Download the latest version of [Visual Studio Community Edition](https://www.visualstudio.com/downloads/).
 Select the `.Net Desktop Development` workflow in the installer to install everything required.
 
-## Step by step
+## Step by step C\# plugin
 
 1. Go to [perseus-plugins](https://github.com/jurgencox/perseus-plugins) github repository. The code for the plugin API
 (`PerseusApi`) and for a number of Perseus plugins (`PerseusPluginLib`) is hosted here.
@@ -88,8 +88,113 @@ We can again utilize this in our plugin by creating our parameter in our `GetPar
 	int[] remains = Enumerable.Range(0, lines).ToArray();
 	mdata.ExtractRows(remains);
 	```
+	
 	Build your solution another time and check to see that the parameters are handled correctly!
 
+## Step by step for C\# with R or Python
+
+1. Please open [`Head_with_py.cs`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Head_with_py.cs) or [`Head_with_r.cs`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Head_with_r.cs).
+All the necessary information and commands are all included in these scripts. You can copy and paste the code and modify it based on your need.
+
+2. Change the project property to your own one:
+    
+	```csharp
+    using PluginTutorial.Properties;
+	```
+	
+	Please replace PluginTutorial to your project name
+
+3. Change the class name and specifiy the type of scripts /- Python or R:
+    
+	```csharp
+    public class HeadPy : PluginInterop.Python.MatrixProcessing
+	```
+	
+	You just need to change `HeadPy` to your class name. Then change `PluginInterop.Python.MatrixProcessing` to `PluginInterop.R.MatrixProcessing` if the script that you want to integrated is written by R.
+
+4. Add the Python or R scripts to the resources. Double click `Properties` which is listed under the Project /- `PluginTutorial` in our case.
+
+5. Select `Resources`, and then click `Add Resource`. Navigate to your R or Python scripts and add them.
+
+6. Connect the scripts in resources to C\# code:
+    
+	```csharp
+        protected override bool TryGetCodeFile(Parameters param, out string codeFile)
+        {
+            byte[] code = (byte[])Resources.ResourceManager.GetObject("head_c_sharpPy");
+            codeFile = Path.GetTempFileName();
+            File.WriteAllText(codeFile, Encoding.UTF8.GetString(code));
+            return true;
+        }
+	```
+	
+	You just need to change `head_c_sharpPy` to your R or Python scripts.
+
+7. Create your parameter in the `SpecificParameters` function:
+	
+	```csharp
+	protected override Parameter[] SpecificParameters(IMatrixData mdata, ref string errString)
+        {
+
+            if (mdata.ColumnCount < 3)
+            {
+                errString = "Please add at least 3 main data columns to the matrix.";
+                return null;
+            }
+            return new Parameter[]
+            {
+                new IntParam("Number of rows", 15)
+                {
+                    Help = "The number of rows for the header needs to be kept."
+                }
+            };
+        }
+	```
+    
+	The if statement is for checking the required data is available or not. You don't need to change it.
+	All of your parameters can be put into the block of `return new Parameter[]`.
+	
+8. Retrieve the parameters from C\# to Python or R.
+    a. Python: the basic commands can be seen in [`perseuspy`](https://github.com/cox-labs/perseuspy). 
+	Using [`head_c_sharpPy.py`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Resources/head_c_sharpPy.py) as an example:
+	
+	```python
+	import sys
+    from perseuspy import pd
+    from perseuspy.parameters import *
+    from perseuspy.io.perseus.matrix import *
+    _, paramfile, infile, outfile = sys.argv # read arguments from the command line (paramfile is the additional variable comparing to the basic command) 
+    parameters = parse_parameters(paramfile) # parse the parameters file
+    df = pd.read_perseus(infile) # read the input matrix into a pandas.DataFrame
+    head = intParam(parameters, "Number of rows") # get the parameter from C\# code
+    df_head = df.head(head) # main part for the data modification. You can add your own script from here.
+    df_head.to_perseus(outfile)# write pandas.DataFrame in Perseus txt format
+	```
+
+    b. R: the basic commands can be seen in [`PerseusR`](https://github.com/cox-labs/PerseusR). 
+	Using [`head_c_sharpR.R`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Resources/head_c_sharpR.R) as an example:
+	
+	```R
+	args = commandArgs(trailingOnly = TRUE) # Reading the command line arguments provided by Perseus and parsing the data.
+    if (length(args) != 3) {
+        stop("Should provide two arguments: paramFile inFile outFile", call. = FALSE)
+    }
+    paramFile <- args[1] # The varable for storing the argument from C\#
+    inFile <- args[2]
+    outFile <- args[3]
+    library(PerseusR) # import perseusR
+    parameters <- parseParameters(paramFile) # parse the parameters
+    num_row <- intParamValue(parameters, 'Number of rows') # get the parameter
+    mdata <- read.perseus(inFile) # read the input matrix into a pandas.DataFrame
+    counts <- main(mdata) # get the main matrix of Perseus
+    mdata2 <- head(counts, n=num_row) # main part for the data modification. You can add your own script from here. 
+    aCols <- head(annotCols(mdata), n=num_row) # get the annotation columns of main matrix and reduce to the amount to the assigned number of rows
+    mdata2 <- matrixData(main=mdata2, annotCols=aCols, annotRows=annotRows(mdata)) # update the matrix
+    print(paste('writing to', outFile)) # print to output file
+    write.perseus(mdata2, outFile) # Write the results to the expected locations in the Perseus formats.
+	```
+9. Build your solution another time and check to see that the parameters are handled correctly!
+	
 ## Next steps
 
 ### Error handling

@@ -3,7 +3,7 @@ using PerseusApi.Matrix;
 using System.IO;
 using PluginInterop;
 using System.Text;
-using PluginTutorial.Properties; // replace PluginHead3 to your project or solution name
+using PluginTutorial.Properties; // replace PluginTutorial to your project or solution name
 
 namespace PluginTutorial
 {
