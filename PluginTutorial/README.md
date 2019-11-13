@@ -167,7 +167,7 @@ All the necessary information and commands are all included in these scripts. Yo
     _, paramfile, infile, outfile = sys.argv # read arguments from the command line (paramfile is the additional variable comparing to the basic command) 
     parameters = parse_parameters(paramfile) # parse the parameters file
     df = pd.read_perseus(infile) # read the input matrix into a pandas.DataFrame
-    head = intParam(parameters, "Number of rows") # get the parameter from C\# code
+    head = intParam(parameters, "Number of rows") # get the parameter from C# code
     df_head = df.head(head) # main part for the data modification. You can add your own script from here.
     df_head.to_perseus(outfile)# write pandas.DataFrame in Perseus txt format
 	```
