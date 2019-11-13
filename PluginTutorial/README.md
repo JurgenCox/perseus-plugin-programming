@@ -105,7 +105,7 @@ All the necessary information and commands are all included in these scripts. Yo
 	
 	Please replace PluginTutorial to your project name
 
-3. Change the class name and specifiy the type of scripts /- Python or R:
+3. Change the class name and specifiy the type of scripts - Python or R:
     
 	```csharp
     public class HeadPy : PluginInterop.Python.MatrixProcessing
@@ -113,7 +113,7 @@ All the necessary information and commands are all included in these scripts. Yo
 	
 	You just need to change `HeadPy` to your class name. Then change `PluginInterop.Python.MatrixProcessing` to `PluginInterop.R.MatrixProcessing` if the script that you want to integrated is written by R.
 
-4. Add the Python or R scripts to the resources. Double click `Properties` which is listed under the Project /- `PluginTutorial` in our case.
+4. Add the Python or R scripts to the resources. Double click `Properties` which is listed under the Project - `PluginTutorial` in our case.
 
 5. Select `Resources`, and then click `Add Resource`. Navigate to your R or Python scripts and add them.
 
@@ -180,7 +180,7 @@ All the necessary information and commands are all included in these scripts. Yo
     if (length(args) != 3) {
         stop("Should provide two arguments: paramFile inFile outFile", call. = FALSE)
     }
-    paramFile <- args[1] # The varable for storing the argument from C\#
+    paramFile <- args[1] # The varable for storing the argument from C#
     inFile <- args[2]
     outFile <- args[3]
     library(PerseusR) # import perseusR
