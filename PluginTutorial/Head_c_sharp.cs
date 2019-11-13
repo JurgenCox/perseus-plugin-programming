@@ -18,7 +18,7 @@ namespace PluginTutorial
 		public string HelpOutput => "extract the header of the matrix.";
 		public string[] HelpSupplTables => new string[0];
 		public int NumSupplTables => 0;
-		public string Name => "Header_CS_only";
+		public string Name => "Head CS only";
 		public string Heading => "Tutorial";
 		public float DisplayRank => 6;
 		public string[] HelpDocuments => new string[0];

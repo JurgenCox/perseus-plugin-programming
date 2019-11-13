@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="header_c_sharpPy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_c_sharpPy.py;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="head_c_sharpPy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\head_c_sharpPy.py;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="header_c_sharpR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\header_c_sharpR.R;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="head_c_sharpR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\head_c_sharpR.R;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

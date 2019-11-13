@@ -74,7 +74,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Head_c_sharp.cs" />
-    <Compile Include="Head_with_resource.cs" />
+    <Compile Include="Head_with_py.cs" />
+    <Compile Include="Head_with_r.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -84,19 +85,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\header_c_sharpR.R" />
+    <None Include="Resources\head_c_sharpR.R" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="conf\crosslinks.xml" />
     <Content Include="conf\databases.xml" />
     <Content Include="conf\enzymes.xml" />
     <Content Include="conf\modifications.xml" />
-    <None Include="Resources\header_c_sharpPy.py" />
+    <None Include="Resources\head_c_sharpPy.py" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

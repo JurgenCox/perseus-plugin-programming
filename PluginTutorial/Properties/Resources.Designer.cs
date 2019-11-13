@@ -19,7 +19,7 @@ namespace PluginTutorial.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -63,9 +63,9 @@ namespace PluginTutorial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] header_c_sharpPy {
+        internal static byte[] head_c_sharpPy {
             get {
-                object obj = ResourceManager.GetObject("header_c_sharpPy", resourceCulture);
+                object obj = ResourceManager.GetObject("head_c_sharpPy", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace PluginTutorial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] header_c_sharpR {
+        internal static byte[] head_c_sharpR {
             get {
-                object obj = ResourceManager.GetObject("header_c_sharpR", resourceCulture);
+                object obj = ResourceManager.GetObject("head_c_sharpR", resourceCulture);
                 return ((byte[])(obj));
             }
         }
