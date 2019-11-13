@@ -93,7 +93,8 @@ We can again utilize this in our plugin by creating our parameter in our `GetPar
 
 ## Step by step for C\# with R or Python
 
-1. Please open [`Head_with_py.cs`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Head_with_py.cs) or [`Head_with_r.cs`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Head_with_r.cs).
+1. We will use [`Head_with_py.cs`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Head_with_py.cs) 
+and [`Head_with_r.cs`](https://github.com/JurgenCox/perseus-plugin-programming/blob/master/PluginTutorial/Head_with_r.cs) as the examples.
 All the necessary information and commands are all included in these scripts. You can copy and paste the code and modify it based on your need.
 
 2. Change the project property to your own one:
