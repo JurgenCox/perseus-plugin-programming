@@ -73,7 +73,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HeadProcessing.cs" />
     <Compile Include="Head_c_sharp.cs" />
     <Compile Include="Head_with_resource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
