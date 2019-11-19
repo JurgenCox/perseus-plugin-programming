@@ -1,4 +1,5 @@
 import sys
+from itertools import takewhile
 import os
 import umap
 import perseuspy
@@ -17,13 +18,7 @@ metric = singleChoiceParam(parameters, "Metric")
 annotations = read_annotations(infile)
 if len(annotations) < 2:
     sys.exit("The data needs to be grouped")
-main_index = []
-i = 0
-for c_type in annotations['Type']:
-    if c_type == 'E':
-        main_index.append(i)
-    i = i + 1
-newDF1 = df.ix[:, main_index[0]:main_index[-1]+1]
+newDF1 = main_df(infile, df)
 newDF1 = newDF1.T
 embedding = umap.UMAP(n_neighbors=n_neighbor,n_components=n_component,
                       metric=metric,random_state=seed, min_dist=m_dist).fit_transform(newDF1)
