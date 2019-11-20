@@ -1,12 +1,9 @@
-﻿using System;
-using System.Linq;
-using BaseLibS.Num;
+﻿using System.Linq;
 using BaseLibS.Graph;
 using BaseLibS.Param;
 using PerseusApi.Document;
 using PerseusApi.Generic;
 using PerseusApi.Matrix;
-using System.Collections.Generic;
 
 namespace PluginTutorial
 {
