@@ -9,7 +9,6 @@ namespace PluginTutorial
 {
 	public class PluginHead : IMatrixProcessing
 	{
-        //Sung-Huan
         public bool HasButton => false;
 		public string Description => "extract the header of the matrix.";
 		public string HelpOutput => "extract the header of the matrix.";

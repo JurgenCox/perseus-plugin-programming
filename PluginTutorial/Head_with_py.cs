@@ -9,12 +9,9 @@ namespace PluginTutorial
 {
     public class HeadPy : PluginInterop.Python.MatrixProcessing // if you use R, replace Python to R
     {
-        //Sung-Huan
         public override string Heading => "Tutorial";
         public override string Name => "Head with Python";
         public override string Description => "extract the header of the matrix";
-        public override bool IsActive => true;
-        public override string Url => null;
 
         protected override bool TryGetCodeFile(Parameters param, out string codeFile)
         {

@@ -9,12 +9,9 @@ namespace PluginTutorial
 {
     public class HeadR : PluginInterop.R.MatrixProcessing // if you use Python, replace R to Python
     {
-        //Sung-Huan
         public override string Heading => "Tutorial";
         public override string Name => "Head with R";
         public override string Description => "extract the header of the matrix";
-        public override bool IsActive => true;
-        public override string Url => null;
 
         protected override bool TryGetCodeFile(Parameters param, out string codeFile)
         {

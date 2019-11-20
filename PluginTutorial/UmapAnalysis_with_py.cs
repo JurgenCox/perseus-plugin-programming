@@ -12,8 +12,6 @@ namespace PluginTutorial
         public override string Heading => "Tutorial";
         public override string Name => "Umap analysis with Python";
         public override string Description => "Applying Umap to cluster the data";
-        public override bool IsActive => true;
-        public override string Url => null;
 
         protected override bool TryGetCodeFile(Parameters param, out string codeFile)
         {
