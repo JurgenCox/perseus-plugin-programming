@@ -1,15 +1,15 @@
-args = commandArgs(trailingOnly = TRUE)
-if (length(args) != 3) {
-	stop("Do not provide additional arguments!", call.=FALSE)
-}
-num <- as.integer(args[1])
-inFile <- args[2]
-outFile <- args[3]
+argv <- commandArgs(trailingOnly=TRUE)
+library("argparser")
+p <- arg_parser(description = "Head processing")
+p <- add_argument(p, '--nrow', type="numeric", default=15, help="the number of row")
+p <- add_argument(p, 'input', help="path of the input file")
+p <- add_argument(p, 'output', help="path of the output file")
+argp <- parse_args(p, argv)
 library(PerseusR)
-mdata <- read.perseus(inFile)
+mdata <- read.perseus(argp$input)
 counts <- main(mdata)
-mdata2 <- head(counts, n=num)
-aCols <- head(annotCols(mdata), n=num)
+mdata2 <- head(counts, n=argp$nrow)
+aCols <- head(annotCols(mdata), n=argp$nrow)
 mdata2 <- matrixData(main=mdata2, annotCols=aCols, annotRows=annotRows(mdata))
-print(paste('writing to', outFile))
-write.perseus(mdata2, outFile)
+print(paste('writing to', argp$output))
+write.perseus(mdata2, argp$output)
