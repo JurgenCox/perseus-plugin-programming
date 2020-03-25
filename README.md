@@ -1,4 +1,4 @@
-﻿# Plugin Tutorial
+﻿# Perseus Plugin Tutorial
 
 The scripts for Perseus plugin protocol.
 The plugin development tutorial consists of two parts. Make sure
