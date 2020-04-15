@@ -64,3 +64,13 @@ Besides the plugin scripts in this repository you can check out:
 
 * [PluginDependentPeptides](https://github.com/cox-labs/PluginDependentPeptides) is a plugin for reading the dependent peptide search
   results into Perseus. This plugin is a hybrid of C# code for parameter passing and a Python script for the actual processing.
+
+* [DualQualityFilter](https://github.com/JuliaS92/PerseusR-DualQualityFilter) intended to be used for filtering SILAC data based on MS/MS count and variability.	
+
+* [ProfileCorrelation](https://github.com/JuliaS92/PerseusPy-ReplicateCorrelation) :for each row, calculates pairwise correlations between profiles defined by categorical 
+annotation rows.
+
+* [PHOTON](https://github.com/jdrudolph/photon)	Elucidation of Signaling Pathways from Large-Scale Phosphoproteomic Data Using Protein Interaction Networks (Rudolph & Cox, 2019).
+
+* [Proteomics ruler](https://maxquant.org/perseus_plugins)	Proteomics normalization without spike-in standard (Wiśniewski et al., 2014).
+
